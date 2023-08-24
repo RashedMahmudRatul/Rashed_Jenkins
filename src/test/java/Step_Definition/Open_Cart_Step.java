@@ -24,16 +24,6 @@ public class Open_Cart_Step  {
     }
 
 
-//    @Before
-//    public void before(Scenario scenario) {
-//        this.scenario = scenario;
-//    }
-//
-//    @After
-//    public void close(){
-//       driver.close();
-//    }
-
     @Given("I am on opencart login page")
     public void i_am_on_opencart_login_page() throws IOException {
         System.out.println("In login Step: "+driver);

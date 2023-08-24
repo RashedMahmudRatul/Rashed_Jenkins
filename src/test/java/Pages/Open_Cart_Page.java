@@ -23,11 +23,9 @@ public class Open_Cart_Page{
     @FindBy(xpath = "//*[@id=\"account-login\"]/div[1]")
     WebElement errorAssertion;
 
-    public Open_Cart_Page(){
 
-    }
     public Open_Cart_Page(WebDriver driver) throws IOException {
-//        this.driver = Driver_Setup.driver;
+        this.driver = Driver_Setup.driver;
         PageFactory.initElements(driver,this);
     }
 

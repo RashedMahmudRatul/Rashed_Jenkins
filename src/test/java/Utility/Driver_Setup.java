@@ -15,11 +15,11 @@ import java.util.concurrent.TimeUnit;
 import static Utility.Properties_Reader.browserName;
 
 public class Driver_Setup {
-    private static WebDriver driver;
+    public static WebDriver driver;
 
 
     public static WebDriver setDriver() throws IOException {
-        if (driver==null){
+//        if (driver==null){
             if (browserName().equals("Chrome")){
                 System.setProperty("webdriver.chrome.driver","Drivers/chromedriver.exe");
                 System.out.println("Starting Chrome....");
@@ -40,23 +40,17 @@ public class Driver_Setup {
                 System.out.println("No Such Browser available!!");
             }
 
-        }
-        else {
-            System.out.println("Deleted previous cookies!!!");
-            driver.manage().deleteAllCookies();
-
-        }
+//        }
+//        else {
+//            System.out.println("Deleted previous cookies!!!");
+//            driver.manage().deleteAllCookies();
+//
+//        }
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         return driver;
     }
 
-    @After
-    public void teardown() {
-        if (driver != null) {
-            driver.quit();
-        }
-    }
 
 
 
