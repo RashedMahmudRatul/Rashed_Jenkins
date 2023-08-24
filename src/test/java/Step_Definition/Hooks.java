@@ -8,7 +8,7 @@ public class Hooks {
     private WebDriver driver = Driver_Setup.driver;
     @After
     public void teardown() {
-        System.out.println("In After Close>>>>");
+
         if (driver != null) {
             driver.quit();
         }
