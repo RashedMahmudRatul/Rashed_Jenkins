@@ -9,7 +9,7 @@ Feature:Login to opencart
     And I click on the login button
     Then I should be logged in successfully
 
-  @test1
+  @test
   Scenario Outline: Unsuccessful login with invalid or empty Creds
     When I have entered invalid "<username>" and "<password>"
     And I click on the login button

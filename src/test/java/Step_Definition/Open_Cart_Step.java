@@ -8,10 +8,14 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Open_Cart_Step  {
     public WebDriver driver;
@@ -30,6 +34,16 @@ public class Open_Cart_Step  {
         driver.get("https://naveenautomationlabs.com/opencart/index.php?route=account/login");
     }
 
+
+
+
+
+
+
+
+
+
+
     @When("I have entered a valid username and password")
     public void i_have_entered_a_valid_username_and_password() throws IOException, InterruptedException {
         lp.emailPassSend();
@@ -42,6 +56,8 @@ public class Open_Cart_Step  {
     @Then("I should be logged in successfully")
     public void i_should_be_logged_in_successfully() {
         Assert.assertEquals("My Account",lp.loginAssert());
+        Assert.assertTrue(lp.loginAssertPositionCheck(),"Position Changed");
+
     }
 
 
